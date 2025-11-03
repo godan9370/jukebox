@@ -47,11 +47,8 @@ function animate() {
 
 animate(); // Start animation loop
 
-// ---- Add this at the very end of your JS ----
+// Stop/resume listener for Readymag
 window.addEventListener("message", (event) => {
-  // Only allow messages from Readymag (optionally check event.origin if you know your site)
-  if (typeof event.data !== "string") return;
-
   if (event.data === "stopMusic") {
     console.log("Stop message received");
     audio.pause();
@@ -65,6 +62,7 @@ window.addEventListener("message", (event) => {
     audio.play();
   }
 });
+
 
 
 
