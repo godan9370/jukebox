@@ -54,6 +54,16 @@ window.addEventListener("message", (event) => {
     audio.pause();
     audio.currentTime = 0;
 
+ // Stop spinning animation
+    targetSpeed = 0;
+    winnieGif.classList.remove('visible'); // hide GIF
+  }
+
+  // Optional: resume if you later want to support that
+  if (event.data === "resumeMusic") {
+    audio.play();
+  }
+});
 
 
 
