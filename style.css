@@ -1,5 +1,10 @@
 body {
-  background-color: #fff;
+  body {
+  background-color: transparent !important;
+}
+html {
+  background-color: transparent !important;
+}
   font-family: monospace;
   margin: 0;
   height: 100vh;
@@ -69,6 +74,7 @@ body {
 #winnieGif.visible {
   opacity: 1;
 }
+
 
 
 
