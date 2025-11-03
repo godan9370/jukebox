@@ -47,20 +47,21 @@ function animate() {
 
 animate(); // Start animation loop
 
-// ⬇️ ADD THIS AT THE END — listens for Readymag messages
+// ---- Add this at the very end of your JS ----
 window.addEventListener("message", (event) => {
+  // Only allow messages from Readymag (optionally check event.origin if you know your site)
+  if (typeof event.data !== "string") return;
+
   if (event.data === "stopMusic") {
-    // Pause and reset the audio
+    console.log("Stop message received");
     audio.pause();
     audio.currentTime = 0;
-
- // Stop spinning animation
     targetSpeed = 0;
-    winnieGif.classList.remove('visible'); // hide GIF
+    winnieGif.classList.remove('visible');
   }
 
-  // Optional: resume if you later want to support that
   if (event.data === "resumeMusic") {
+    console.log("Resume message received");
     audio.play();
   }
 });
