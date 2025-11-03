@@ -47,6 +47,12 @@ function animate() {
 
 animate(); // Start animation loop
 
+// ⬇️ ADD THIS AT THE END — listens for Readymag messages
+window.addEventListener("message", (event) => {
+  if (event.data === "stopMusic") {
+    // Pause and reset the audio
+    audio.pause();
+    audio.currentTime = 0;
 
 
 
